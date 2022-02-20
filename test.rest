@@ -1,0 +1,37 @@
+POST http://localhost:8000/api/v1/auth/jwt/create HTTP/1.1
+content-type: application/json
+
+{
+    "username": "****",
+    "password": "****"
+}
+
+### 
+
+GET http://127.0.0.1:8000/api/v1/investments/ HTTP/1.1
+Content-Type: application/json
+Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ0NzkxMTA3LCJqdGkiOiI3Y2Q4YjUyN2NhZjE0ZDYwOTNmOGVkOTllYjRjY2NiNCIsInVzZXJfaWQiOjJ9.6Ls_0Pz-PipX3BGmuUcax8scFfaJeERxuhkvBtDlJfg
+
+
+###
+
+DELETE http://127.0.0.1:8000/api/v1/investments/4/ HTTP/1.1
+Content-Type: application/json
+Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ0NzkxMTA3LCJqdGkiOiI3Y2Q4YjUyN2NhZjE0ZDYwOTNmOGVkOTllYjRjY2NiNCIsInVzZXJfaWQiOjJ9.6Ls_0Pz-PipX3BGmuUcax8scFfaJeERxuhkvBtDlJfg
+
+
+
+### 
+
+POST http://localhost:8000/api/v1/investments/ HTTP/1.1
+Content-Type: application/json
+Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ0NDQzMDE2LCJqdGkiOiIxYWE4YWI5NWIzYmM0MmJlYmI2MzNhY2Y2M2M5ZWYzZSIsInVzZXJfaWQiOjJ9.otWfI721ps97fzYjgH4Smtjxs45C86-_NRdeB8Ff4pc
+
+{
+    "date": "2022-01-05T23:48:47Z",
+    "exchange_id": 1,
+    "currency_id": 1,
+    "order_type": "buy",
+    "price": 63000.0,
+    "quantity": 0.001
+}

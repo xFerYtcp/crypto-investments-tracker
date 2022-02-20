@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  db:
+    image: postgres:14-alpine
+    env_file:
+      - .env
+
+  investmentstracker:
+    image: investmentstracker
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST:-db}:${POSTGRES_PORT:-5432}/${POSTGRES_DB}
+    ports:
+      - 8000:8000
+    # volumes:
+    #   - ~/.config/follow_investments/db.sqlite3:/home/appuser/.config/investment-tracker/db.sqlite3

@@ -1,0 +1,102 @@
+[
+  {
+    "model": "investments.exchange",
+    "pk": 1,
+    "fields": {
+      "created_at": "2022-02-08T22:29:51.414Z",
+      "updated_at": "2022-02-08T22:29:51.414Z",
+      "name": "Kraken",
+      "url": "https://www.kraken.com/"
+    }
+  },
+  {
+    "model": "investments.exchange",
+    "pk": 2,
+    "fields": {
+      "created_at": "2022-02-11T21:10:41.861Z",
+      "updated_at": "2022-02-11T21:10:41.861Z",
+      "name": "Coinbase",
+      "url": "https://coinbase.com/"
+    }
+  },
+  {
+    "model": "investments.exchange",
+    "pk": 3,
+    "fields": {
+      "created_at": "2022-02-12T21:24:27.722Z",
+      "updated_at": "2022-02-12T21:24:27.722Z",
+      "name": "Binance",
+      "url": "https://www.binance.com/"
+    }
+  },
+  {
+    "model": "investments.exchange",
+    "pk": 4,
+    "fields": {
+      "created_at": "2022-02-12T21:24:51.232Z",
+      "updated_at": "2022-02-12T21:24:51.232Z",
+      "name": "FTX",
+      "url": "https://ftx.com/"
+    }
+  },
+  {
+    "model": "investments.exchange",
+    "pk": 5,
+    "fields": {
+      "created_at": "2022-02-12T21:25:04.960Z",
+      "updated_at": "2022-02-12T21:25:04.960Z",
+      "name": "KuCoin",
+      "url": "https://www.kucoin.com/"
+    }
+  },
+  {
+    "model": "investments.exchange",
+    "pk": 6,
+    "fields": {
+      "created_at": "2022-02-12T21:25:17.501Z",
+      "updated_at": "2022-02-12T21:25:17.502Z",
+      "name": "Huobi Global",
+      "url": "https://www.huobi.com/"
+    }
+  },
+  {
+    "model": "investments.exchange",
+    "pk": 7,
+    "fields": {
+      "created_at": "2022-02-12T21:25:39.028Z",
+      "updated_at": "2022-02-12T21:25:39.028Z",
+      "name": "Gate.io Gate.io",
+      "url": "https://gate.io/"
+    }
+  },
+  {
+    "model": "investments.exchange",
+    "pk": 8,
+    "fields": {
+      "created_at": "2022-02-12T21:25:44.630Z",
+      "updated_at": "2022-02-12T21:25:44.630Z",
+      "name": "Bitfinex",
+      "url": "https://www.bitfinex.com/"
+    }
+  },
+  {
+    "model": "investments.exchange",
+    "pk": 9,
+    "fields": {
+      "created_at": "2022-02-12T21:25:57.536Z",
+      "updated_at": "2022-02-12T21:25:57.536Z",
+      "name": "Crypto.com",
+      "url": "https://crypto.com/exchange"
+    }
+  },
+  {
+    "model": "investments.exchange",
+    "pk": 10,
+    "fields": {
+      "created_at": "2022-02-12T21:26:11.327Z",
+      "updated_at": "2022-02-12T21:26:11.327Z",
+      "name": "Mandala Exchange",
+      "url": "https://trade.mandala.exchange/"
+    }
+  }
+]
