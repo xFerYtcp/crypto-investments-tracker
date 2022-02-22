@@ -53,6 +53,16 @@ class ExchangeViewSet(viewsets.ModelViewSet):
         IsAuthenticated,
     ]
 
+    def get_queryset(self):
+        qs = super().get_queryset()
+        onlyused = self.request.GET.get("onlyused")
+        qs = (
+            qs.filter(investments__user=self.request.user).distinct()
+            if onlyused is not None
+            else qs
+        )
+        return qs
+
 
 class BalanceViewSet(ListAPIView):
     queryset = Investments.objects.all().order_by("-date")
@@ -65,14 +75,20 @@ class BalanceViewSet(ListAPIView):
     # filter_fields = ["area_type", "places__sessions__sightings__codesp"]
 
     def get_queryset(self):
-        qs = super(BalanceViewSet, self).get_queryset()
+        qs = super().get_queryset()
+        exchange = self.request.GET.get("exchange")
         qs = (
             qs.values("currency__code", "currency__id", "currency__name")
             .annotate(buy_cost=Sum("cost", filter=Q(order_type__category="buy")))
-            .annotate(buy_quantity=Sum("quantity", filter=Q(order_type__category="buy")))
+            .annotate(
+                buy_quantity=Sum("quantity", filter=Q(order_type__category="buy"))
+            )
             .annotate(sell_cost=Sum("cost", filter=Q(order_type__category="sell")))
-            .annotate(sell_quantity=Sum("quantity", filter=Q(order_type__category="sell")))
+            .annotate(
+                sell_quantity=Sum("quantity", filter=Q(order_type__category="sell"))
+            )
             .filter(user=self.request.user)
             .order_by("currency__code")
         )
+        qs = qs.filter(exchange=exchange) if exchange is not None else qs
         return qs

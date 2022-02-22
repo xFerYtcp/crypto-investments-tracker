@@ -2,6 +2,21 @@
   <v-container fluid fill-height>
     <v-layout align-center justify-center>
       <v-flex>
+        <v-autocomplete
+          v-model="exchange"
+          :items="exchanges"
+          item-text="name"
+          item-value="id"
+          label="Exchanges"
+          hint="Select an exchange"
+          chips
+          clearable
+          filled
+          persistent-hint
+          required
+          single-line
+          @change="getBalance()"
+        ></v-autocomplete>
         <v-row dense>
           <v-col cols="12" sm="12" md="6" lg="4" class="d-flex center">
             <v-card
@@ -97,6 +112,8 @@ export default {
       balance: [],
       currentValues: {},
       coinData: {},
+      exchange: null,
+      exchanges: [],
     }
   },
   computed: {
@@ -112,11 +129,17 @@ export default {
     },
   },
   mounted() {
+    this.listUsedExchanges()
     this.getBalance()
   },
   methods: {
     round(value, decimals) {
       return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals)
+    },
+    listUsedExchanges() {
+      this.$axios.$get('exchange?onlyused').then((data) => {
+        this.exchanges = data
+      })
     },
     currentBalance(item) {
       const curBal =
@@ -125,7 +148,10 @@ export default {
       return curBal
     },
     getBalance() {
-      this.$axios.$get('balance').then((data) => {
+      const url = this.exchange
+        ? `balance?exchange=${this.exchange}`
+        : 'balance'
+      this.$axios.$get(url).then((data) => {
         this.balance = data
         this.balance.forEach((e) => {
           this.$axios

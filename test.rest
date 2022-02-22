@@ -5,6 +5,12 @@ content-type: application/json
     "username": "****",
     "password": "****"
 }
+### 
+
+GET http://127.0.0.1:8000/api/v1/exchange/?onlyused HTTP/1.1
+Content-Type: application/json
+Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1NTcwMDk2LCJqdGkiOiIyOGYzZjAwNWJmZGQ0MDg3YmEwYjZlMDM0MzVhYmIyMyIsInVzZXJfaWQiOjJ9.Cg936mR3uZa0J-6GW25qVSkF9MfacsOYQB5z2FAv4k4
+
 
 ### 
 
